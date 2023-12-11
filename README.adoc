@@ -21,7 +21,7 @@ public void today_is_sunday() {
 .Exemple d'image insérée en asciidoc
 image::artifacts-r303.svg[width=80%]
 
-.Code source de is_it_fiday_yet.feature :
+.Code source de is_it_friday_yet.feature :
 [source,java]
 ---
 # language: en
@@ -37,5 +37,7 @@ Feature: Is it Friday yet?
       | Sunday         | Nope   |
       | anything else! | Nope   |
 ---
+
+image::doc_support_tp/result_tp1_test.png
 
 == TP2...
