@@ -38,6 +38,6 @@ Feature: Is it Friday yet?
       | anything else! | Nope   |
 ---
 
-image::doc_support_tp/result_tp1_test.png
+image::./doc_support_tp/result_tp1_test.png[]
 
 == TP2...
