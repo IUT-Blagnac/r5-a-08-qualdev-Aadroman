@@ -1,8 +1,10 @@
+image::https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg[link="https://classroom.github.com/online_ide?assignment_repo_id=13207705&assignment_repo_type=AssignmentRepo"]
+
 = R5.A.08 -- Dépôt pour les TPs
 :icons: font
 :MoSCoW: https://fr.wikipedia.org/wiki/M%C3%A9thode_MoSCoW[MoSCoW]
 
-Ce dépôt concerne les rendus de mailto:A_changer@etu.univ-tlse2.fr[Jonh Doe].
+Ce dépôt concerne les rendus de mailto:ruben.longeque@etu.univ-tlse2.fr[Rubén Longèque].
 
 == TP1
 
@@ -19,4 +21,65 @@ public void today_is_sunday() {
 .Exemple d'image insérée en asciidoc
 image::artifacts-r303.svg[width=80%]
 
-== TP2...
+.Code source de is_it_friday_yet.feature :
+[source,java]
+---
+# language: en
+Feature: Is it Friday yet?
+  Everybody wants to know when it's Friday
+  Scenario Outline: Sunday isn't Friday
+    Given today is "<day>"
+    When I ask whether it's Friday yet
+    Then I should be told "<answer>"
+    Examples:
+      | day            | answer |
+      | Friday         | TGIF   |
+      | Sunday         | Nope   |
+      | anything else! | Nope   |
+---
+
+image::./doc_support_tp/result_tp1_test.png[]
+
+== TP2
+
+.Code source de Order.java :
+[source,java]
+---
+public class Order {
+    private String message;
+    private String target;
+    private String owner;
+    private List<String> cocktails_ordered;
+    public Order(){
+        this.owner = "";
+        this.target="";
+        this.cocktails_ordered = new ArrayList<>();
+        this.message="";
+    }
+    public void declareOwner(String romeo) {
+        this.owner = romeo;
+    }
+    public void declareTarget(String juliette) {
+        this.target = juliette;
+    }
+    public List<String> getCocktails() {
+        return this.cocktails_ordered;
+    }
+    public void addCocktail(int nbCocktails) {
+        for(int i = 0; i < nbCocktails; i++) {
+            this.cocktails_ordered.add("cocktail");
+        }
+    }
+    public String getOwner() {
+        return owner;
+    }
+    public void setMessage(String message) {
+        this.message = message;
+    }
+    public String createTicket(){
+        return "From "+this.owner+" To "+this.target+": "+this.message;
+    }
+}
+---
+
+image::./doc_support_tp/result_tp2.png[]
